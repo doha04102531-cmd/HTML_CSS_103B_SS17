@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="sub">Bạn đã truy cập trang này <span id="count"></span> lần</p>
+    <script>
+let count = localStorage.getItem("visit_count") || 0;
+
+let countElement = document.getElementById("count");
+window.addEventListener("load", () =>{
+    count++;
+
+    localStorage.setItem("visit_count", count);
+    countElement.innerText = count;
+});
+    </script>
+    
+</body>
+</html>

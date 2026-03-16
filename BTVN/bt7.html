@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <h1 id="counter">0</h1>
+
+        <div class="buttons">
+            <button id="plus">+1</button>
+            <button id="minus">-1</button>
+            <button id="reset">Reset</button>
+        </div>
+
+    </div>
+
+    <script>
+        const counter = document.getElementById("counter");
+        const plus = document.getElementById("plus");
+        const minus = document.getElementById("minus");
+        const reset = document.getElementById("reset");
+
+        let value = 0;
+
+        window.addEventListener("load", () => {
+            let savedValue = localStorage.getItem("counterValue");
+
+            counter.innerHTML = value;
+        });
+
+        plus.addEventListener("click", () => {
+            value++;
+            counter.innerHTML = value;
+
+            localStorage.setItem("counterValue", value);
+        });
+
+        minus.addEventListener("click", () => {
+            value--;
+            counter.innerHTML = value;
+
+            localStorage.setItem("counterValue", value);
+        });
+
+        reset.addEventListener("click", () => {
+            value = 0;
+            counter.innerHTML = value;
+
+            localStorage.setItem("counterValue", value);
+        });
+    </script>
+</body>
+
+</html>

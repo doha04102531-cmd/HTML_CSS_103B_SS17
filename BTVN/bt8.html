@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <h2>Viết gì đó...</h2>
+
+    <textarea id="textArea" rows="10" cols="60"></textarea>
+
+    <br /><br />
+
+    <button id="clearBtn">Xóa nháp</button>
+    <script>
+        const textArea = document.getElementById("textArea");
+        const clearBtn = document.getElementById("clearBtn");
+
+        window.addEventListener("load", () => {
+
+            const draft = localStorage.getItem("draft");
+        });
+
+        textArea.addEventListener("input", () => {
+
+            localStorage.setItem("draft", textArea.value);
+
+        });
+
+        clearBtn.addEventListener("click", () => {
+
+            localStorage.removeItem("draft");
+
+            textArea.value = "";
+
+        });
+    </script>
+</body>
+
+</html>
